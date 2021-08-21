@@ -17,52 +17,71 @@
 
 ; using namespace std;
 
-void getFile(string file, vector<int>& averages) //numeros
-{
-	ifstream infile(file);
-	if (infile)
-	{
-		string line;
-		while (getline(infile, line))
-		{
-			istringstream is(line);
-			int value;
-			while (is >> value)
-			{
-				cout << "calificacion " << value << "  ";
-			}
-			cout << endl;
-		}
-	}
-
-
-}
-void getFile(string file, vector<string>& name) // letras
-{
+void getFile(string file, vector<string>& name) // letras y numeros
+{			cout << "-calificaciones-" << endl;
 	ifstream infile(file);
 	if (infile) 
 	{
-		string lin;
-		while (getline(infile, lin)) {
-			istringstream is(lin);
+		string endlin;
+		while (getline(infile, endlin)) {
+			istringstream is(endlin);
 			string value;
+
 			while (is >> value) 
 			{
-				cout << "   " << value << "  ";
+				cout << " " << value << " ";
 			}
-			cout << endl;
+			//fin loop
+			cout <<" "<<endl;
 		}
 	}
 
+	cout << endl << endl;
+}
 
+int sumadecalif()
+{
+
+   ifstream inFile;
+    char filename[10];
+ 
+ inFile.open("file.txt");
+  
+   ofstream outFile("resultados.txt");
+   string line;
+   string line2;
+  
+   while (getline(inFile, line))
+   {
+   // if (line.empty()) 
+ //continue;
+
+    istringstream iss(line);
+	float sum = 0;
+	float next = 0;
+	float avg = 0;
+	float suma2 = 0;
+	float next2 = 0;
+	float lilnum=0;
+	while (iss >> next)
+		sum += next;
+		avg = sum/6;
+	outFile << "suma de calificaciones: "  << sum << endl;//salida a archivo
+	outFile << "promedio personal:       " << avg << endl;//salida a archivo
+	
+
+   }
+
+   inFile.close();
+   outFile.close();
+  
+  
+  return 0;
 }
 
 int main() {
-	vector<int> averages;
 	vector<string> name;
-	getFile("file.txt", averages);
 	getFile("file.txt", name);
-
-
-
+	sumadecalif();
+	//promediopers();
 }
