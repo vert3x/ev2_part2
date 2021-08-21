@@ -1,5 +1,5 @@
 ﻿  ev2_part2.cpp
-C:\Users\ADO\source\repos\evidencia2_part2\ev2_part2\ev2_part2\ev2_part2.cpp(137,10): warning C4244: 'argumento': conversión de 'float' a 'const _Elem'; posible pérdida de datos
+C:\Users\ADO\source\repos\evidencia2_part2\ev2_part2\ev2_part2\ev2_part2.cpp(145,10): warning C4244: 'argumento': conversión de 'float' a 'const _Elem'; posible pérdida de datos
           with
           [
               _Elem=char

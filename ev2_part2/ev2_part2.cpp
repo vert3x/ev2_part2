@@ -20,7 +20,10 @@
 ; using namespace std;
 
 void getFile(string file, vector<string>& name) //matriz de calificaciones
-{			cout << "-calificaciones-" << endl;
+{		
+
+
+	cout << "-calificaciones-" << endl;
 	ifstream infile(file);
 	if (infile) 
 	{
@@ -47,7 +50,11 @@ int sumadecalif()//procesos sumas y promedios
    ifstream inFile;
 
  inFile.open("file.txt", ios_base::app);
-  
+ if (!inFile)
+ {
+	 cerr << "File file.txt not found." << endl;
+	 return -1;
+ }
    ofstream out("promedios personales.txt");
    string line;
    string line2;
@@ -162,7 +169,11 @@ int to_do()
 	ifstream inFile;
 
 	inFile.open("file.txt", ios_base::app);
-
+	if (!inFile)
+	{
+		cerr << "File file.txt not found." << endl;
+		return -1;
+	}
 	ofstream out("to_do.txt");
 	string line;
 
