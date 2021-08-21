@@ -2,6 +2,7 @@
 //programa de calificaciones
 //velazquez 2920582
 //hay que crear un archivo llamado file.txt en la carpeta raiz del proyecto
+//https://github.com/vert3x/ev2_part2 apenas trato de implementar github a mis trabajos
 
 
 #include <iostream>
